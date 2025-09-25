@@ -65,24 +65,32 @@
         <div class="images-row">
             <figure>
                 <img src="project-1-images/beans_1_grid.png" alt="beans_1_grid">
-                <figcaption>Top row shows the original image, and the bottom shows the equalized image and corresponding histogram and CDF. </figcaption>
+                <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
         <p>In the second picture, the image does not have dark or light pixels, meaning the histogram needs to be stretched in both directions</p>
         <div class="images-row">
             <figure>
                 <img src="project-1-images/beans_2_grid.png" alt="beans_2_grid">
-                <figcaption>Top row shows the original image, and the bottom shows the equalized image and corresponding histogram and CDF. </figcaption>
+                <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
         <p>In the last image, pixels are all too dark, so the histogram needs to be stretched to include pixels with higher values.</p>
         <div class="images-row">
             <figure>
                 <img src="project-1-images/beans_3_grid.png" alt="beans_3_grid">
-                <figcaption>Top row shows the original image, and the bottom shows the equalized image and corresponding histogram and CDF. </figcaption>
+                <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
     </div>
+        <h3>Question (b)</h3>
+        <p>The winter picture shown below does not have enough contrast. Additionally, while the histogram looks like most pixels are between 100 and 200, they in fact get as low as 23 and as high as 224, meaning the histogram is very skewed on both sides. This is why equalization, shown in the second row, does not have a significant impact on the histogram and the overal contrast. To further improve the contrast, I multiplied the pixel values by 1.8 and then subtracted 160. Pixel value above 255 or below 0 were clipped at 255 and 0 respectively, and since there are very few pixels at these extreme values, it does not significantly alter the overall image. I adjusted these values until the histogram visibly looked better, and the CDF increased from pixel values of 0 to 255. In the last row, it is clear that the contrast is significantly improved, showing that equalization alone is not always successful.</p>
+        <div class="images-row">
+            <figure>
+                <img src="project-1-images/winter_grid.png" alt="winter_grid">
+                <figcaption>Original image (top row), equalized image (middle row), and equalized, scaled, shifted, and clipped (bottom row).</figcaption>
+            </figure>
+        </div>
 
     <div class="section">
         <h2>Part 3 - Anisotropic Diffusion</h2>
