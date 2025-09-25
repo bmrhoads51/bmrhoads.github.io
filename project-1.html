@@ -5,7 +5,18 @@
     <title>Project 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            /* Center the container horizontally */
+            display: flex; 
+            justify-content: center;
+        }
+        .container {
+            /* Constrain max width but allow to fill smaller windows */
+            max-width: 900px;
+            width: 100%;
+        }
         .section { margin-bottom: 40px; }
         .images-row {
             display: flex;
@@ -37,6 +48,7 @@
     </style>
 </head>
 <body>
+    <div class="container">
     <a href="index.html">Go Back</a>
 
 
@@ -128,6 +140,6 @@
         <h2>Part 3 - Anisotropic Diffusion</h2>
         <p>Another section with just text, or you could add more images here.</p>
     </div>
-
+    </div>
 </body>
 </html>
