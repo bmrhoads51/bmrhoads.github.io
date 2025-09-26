@@ -124,7 +124,6 @@
             </figure>
         </div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <p>In the second picture, the image does not have dark or light pixels, meaning the histogram needs to be stretched in both directions</p>
         <div class="images-row">
             <figure>
@@ -133,7 +132,6 @@
             </figure>
         </div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <p>In the last image, pixels are all too dark, so the histogram needs to be stretched to include pixels with higher values.</p>
         <div class="images-row">
             <figure>
@@ -141,8 +139,6 @@
                 <figcaption>Original image (3), histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
         <h3>Question (b) - Creative Task: Apply to Your Own Images</h3>
@@ -156,8 +152,6 @@
         </div>
         <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <h3>Question (c) - Histogram Matching</h3>
         <p>For the three images, matching each of them to the target image is similar to equalization because the target image has complete contrast. The following three figure show the histogram matching of the three images. </p>
         <div class="images-row">
@@ -167,18 +161,12 @@
             </figure>
         </div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <div class="images-row">
             <figure>
                 <img src="project-1-images/beans_2_target.png" alt="beans_2_target">
                 <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
         <div class="images-row">
             <figure>
@@ -187,13 +175,9 @@
             </figure>
         </div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
     
         <h3>Question (d)</h3>
         <p>Using a Gaussian filter, [[1,2,1], [2,4,2], [1,2,1]], followed by a simple derivative filter in the x [-1,0,1] and y [[-1], [0], [1]] direction, the edges of the x and y components were obtained and used to calculate the magnitude of the edge vector. Then, the derivative of the gaussian filter in the x and y direction was applied to the images to directly detect the x and y components of the edges, which were also combined for the complete edge magnitude. The figures below show the naive (two step) and direct (single step) x, y, and magnitude images of the edges for the 3 test images. </p>
-        <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
 
         <div class="images-row full-width-image-row">
@@ -207,9 +191,6 @@
             </figure>
         </div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <div class="images-row full-width-image-row">
             <figure class="less-width">
                 <img src="project-1-images/image_5.png" alt="image_5">
@@ -220,9 +201,6 @@
                 <figcaption>dx, dy, and edges using naive and direct gaussian filter approach. </figcaption>
             </figure>
         </div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
         <div class="images-row full-width-image-row">
             <figure class="less-width">
@@ -235,13 +213,10 @@
             </figure>
         </div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
 
         <p>In the first image (circle inside of square), there is consistent noise which is not fully removed from the gaussian smoothing, so the final edge pictures also have some noise, but the edges are still clearly defined. This is because the image is overall clear in the separation between sections. </p>
         <p>In the second image (circuit board), the naive and direct methods both do nearly the same; however, the naive method appears to have more crisp edges. This may be because using two filters can preserve more information than using just one, since they are both approximations of gaussian filters. It is also likely that the DOG filters being a 3x3 matrix causes additional surrounding pixels to be included in the derivative calculation, causing more blurry edges, while the direct approach just uses row and column vectors for the derivatives, reducing the noise in the edge calculation. </p>
         <p>Finally, the last image, which is the same as the previous one, but with salt and pepper noise. It is known that salt and pepper noise is difficult to remove with gaussian filters, especially when they are such small filters, since a white or black pixel can significantly affect the value of the smoothed pixel and the local derivative. The naive method also appears to have extracted more crisp edges in this case as well, likely for the same reasons as described for the previous image. </p>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
 
@@ -274,8 +249,6 @@
         <p>Overall, the anisotropic diffusion filter is able to remove noise very well, but if the filter is too strong (K value in diffusion coefficient calculation), there can be a lot of blurring, making the image worse. Tuning this parameter for the specific task is necessary, as with most image processing methods. </p>
         <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
 
         <h3>Question 2 - Comparison with Gaussian Smoothing</h3>
         <p>The anisotropic diffusion using the exponential diffusion coefficient is much better at preserving the lighting contrast than the gaussian filter. It also appears to preserve most of the details in the image, including the woman's hair. The amount of detail in the hair appears is almost indistinguishable from that of the original image. </p>
@@ -291,11 +264,10 @@
         <p>Overall, using the exponential diffusion coefficient equation seems to preserve contrast much better than the fraction diffusion coefficient and gaussian smoothening, and it also preserves details much better.</p>
         <div style="height: 40px;"></div>
         <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
-        <div style="height: 40px;"></div>
 
         <h3>Question 3 - Limitations of Anisotropic Diffusion and Potential Improvements</h3>
         <p>One limitation of the anisotropic diffusion filter is the amount of iterations required, which makes it the number of iterations more complex than a gaussian filter, not including the higher complexity in the calcultion of a single iteration compared to the gaussian filter. Additionally, the K value and iterations must both be tuned to optimize smoothening (cannot smooth too little, and definitely don't want to smooth too much). It may be possible to reduct the iterations needed to a much smaller number (perhaps even 1) if the K value is high enough. This would require only optimizing one parameter. Another possibility for improvement would be to include diagonal pixels in the local gradient calculation, which would provide a more complete calculation of the local landscape for smoothening. This, however, would require twice the computation (8 gradients instead of 4). Last, maybe it would improve the smoothening if the anisotropic diffusion and gaussian smoothening were used serially. Alternating between the two filters (difficult to say what order would be best; it is possible order would not matter because of commutative property of convolutions), may allow the resulting image to benefit from the strengths of each method, improving the overall smoothed image. </p>
+    <div style="height: 40px;"></div>
     </div>
     </div>
 </body>
