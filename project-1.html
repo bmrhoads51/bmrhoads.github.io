@@ -50,28 +50,42 @@
         .images-row .more-width {
             flex: 1.5;
         }
+    
+        /* --- FULL WIDTH, NO GAP/PADDING, EDGE-TO-EDGE --- */
         .images-row.full-width-image-row {
-            /* Remove any gap/padding if you don't want space between container and image */
-            gap: 0;
-        }
-        
-        .images-row.full-width-image-row figure {
-            flex: 1 1 100%;
+            gap: 0; /* No space between images */
             margin: 0;
-            width: 100%;
+        }
+        .images-row.full-width-image-row figure {
+            margin: 0;
+            padding: 0;
+            width: 0; /* Let flex control width */
             display: flex;
             flex-direction: column;
-            align-items: center; /* optional if you want to center caption */
+            align-items: stretch; /* Ensure figcaption spans full width */
         }
-        
         .images-row.full-width-image-row figure img {
             width: 100%;
             height: auto;
+            border-radius: 0; /* Edge-to-edge */
             display: block;
-            border-radius: 0; /* Remove rounding if you want image edge-to-edge */
         }
         .images-row.full-width-image-row figure figcaption {
             width: 100%;
+            text-align: center;
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .images-row.full-width-image-row figure.less-width {
+            flex: 0.5 1 0%;
+            margin: 0;
+            width: 0; /* Let flex control width */
+        }
+        .images-row.full-width-image-row figure.more-width {
+            flex: 1.5 1 0%;
+            margin: 0;
+            width: 0;
         }
         h1, h2, h3, h4 { margin-top: 0; }
     </style>
