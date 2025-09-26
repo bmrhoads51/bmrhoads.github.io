@@ -222,6 +222,7 @@
         <p>The anisotropic diffusion using the exponential diffusion coefficient is much better at preserving the lighting contrast than the gaussian filter. It also appears to preserve most of the details in the image, including the woman's hair. The amount of detail in the hair appears is almost indistinguishable from that of the original image. </p>
         <p>The gaussian smoothening seems to affect the lighting contrast similar to the anisotropic diffusion with the fractional diffusion coefficient, while not removing as much noise. The anisotropic diffusion image seems to have more clear edges, and about the same amount of detail. Reducing the K value may help with some of these problems, as shown in the previous image. </p>
         <p>The results are very similar for the CT scan, however the lighting is not affected as much as the image of the woman, and the gaussian filter does not remove as much noise as either of the anisotropic diffusion filters. </p>
+        <p>Additionally, increasing the number of iterations appears to have a similar affect as increasing the value of K. A K value of 30 with 15 iterations is similar to using a K value of 15 with 30 iterations, as both parameters are affecting the degree to which the smoothening is being applied. </p>
         <div class="images-row full-width-image-row">
             <figure>
                 <img src="project-1-images/anisotropic_vs_gaussian.png" alt="anisotropic diffusion vs gaussian comparison">
@@ -231,7 +232,7 @@
         <p>Overall, using the exponential diffusion coefficient equation seems to preserve contrast much better than the fraction diffusion coefficient and gaussian smoothening, and it also preserves details much better.</p>
         
         <h3>Question 3 - Limitations of Anisotropic Diffusion</h3>
-        <p>a;dsf;lakj</p>
+        <p>One limitation of the anisotropic diffusion filter is the amount of iterations required, which makes it the number of iterations more complex than a gaussian filter, not including the higher complexity in the calcultion of a single iteration compared to the gaussian filter. Additionally, the K value and iterations must both be tuned to optimize smoothening (cannot smooth too little, and definitely don't want to smooth too much). It may be possible to reduct the iterations needed to a much smaller number (perhaps even 1) if the K value is high enough. This would require only optimizeing one parameter. Another possibility for improvement would be to include diagonal pixels in the local gradient calculaiton, which would provide a more complete calculation of the local landscape for smoothening. This, however, would require twice the computation (8 gradients instead of 4). Last, maybe it would improve the smoothening if the anisotropic diffusion and gaussian smoothening were used serially. Alternating between the two filters (difficult to say what order would be best; it is possible order would not matter because of commutative property of convolutions), may allow the resulting image to benefit from the strengths of each method, improving the overall smoothened image. </p>
     </div>
     </div>
 </body>
