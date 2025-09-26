@@ -182,6 +182,8 @@
                 <figcaption>dx, dy, and edges using naive and direct gaussian filter approach. </figcaption>
             </figure>
         </div>
+        <p></p>
+        <p></p>
         <div class="images-row full-width-image-row">
             <figure class="less-width">
                 <img src="project-1-images/image_5.png" alt="image_5">
@@ -192,6 +194,8 @@
                 <figcaption>dx, dy, and edges using naive and direct gaussian filter approach. </figcaption>
             </figure>
         </div>
+        <p></p>
+        <p></p>
         <div class="images-row full-width-image-row">
             <figure class="less-width">
                 <img src="project-1-images/image_6.png" alt="image_6">
@@ -202,6 +206,7 @@
                 <figcaption>dx, dy, and edges using naive and direct gaussian filter approach. </figcaption>
             </figure>
         </div>
+        <p></p>
         <p>In the first image (circle inside of square), there is consistent noise which is not fully removed from the gaussian smoothing, so the final edge pictures also have some noise, but the edges are still clearly defined. This is because the image is overall clear in the separation between sections. </p>
         <p>In the second image (circuit board), the naive and direct methods both do nearly the same; however, the naive method appears to have more crisp edges. This may be because using two filters can preserve more information than using just one, since they are both approximations of gaussian filters. It is also likely that the DOG filters being a 3x3 matrix causes additional surrounding pixels to be included in the derivative calculation, causing more blurry edges, while the direct approach just uses row and column vectors for the derivatives, reducing the noise in the edge calculation. </p>
         <p>Finally, the last image, which is the same as the previous one, but with salt and pepper noise. It is known that salt and pepper noise is difficult to remove with gaussian filters, especially when they are such small filters, since a white or black pixel can significantly affect the value of the smoothed pixel and the local derivative. The naive method also appears to have extracted more crisp edges in this case as well, likely for the same reasons as described for the previous image. </p>
