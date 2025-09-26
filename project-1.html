@@ -207,7 +207,27 @@
 
     <div class="section">
         <h2>Part 3 - Anisotropic Diffusion</h2>
-        <p>Another section with just text, or you could add more images here.</p>
+        <h3>Question 1 - Implementation of Anisotropic Diffusion</h3>
+        <p>For the image of the woman, the first option is able to remove most of the noise with a K of 30, although some of the detail is lost. For the second image, a lot of noise is removed with K=20, and even more with K=30. For K values of 20 and 30, it looks like too much detail is lost by removing noise, and for 30, there is even some significant blurring happening. K=10 is a good reduction in noise without significantly losing information about the CT scan.</p>
+        <p>In the bottom two rows, using option 2 for the diffusion coefficient, the output images are significantly different. They become much darker than option 1 images, almost as if surrounding pixels are being combined to form a darker pixel. In the image of the woman, this makes it look like the lightinig is changing, and there are just more shadows around her face, but in the CT scan, there is not as much darkening. There is still a significant amount of blurring, like with option 1, on the CT scan, and a K of 10 is probably too much blurring in this case. </p>
+        <div class="images-row full-width-image-row">
+            <figure>
+                <img src="project-1-images/anisotropic_diffusion.png" alt="anisotropic diffusion">
+                <figcaption>Applying anisotropic diffusion on two images with increasing K values. Top two rows are for diffusion coefficent calculated using exponential term (option 1) and bottom two rows are using diffusion coefficient with fractional term (option 2). </figcaption>
+            </figure>
+        </div>
+        <p>Overall, the anisotropic diffusion filter is able to remove noise very well, but if the filter is too strong (K value in diffusion coefficient calculation), there can be a lot of blurring, making the image worse. Tuning this parameter for the specific task is necessary, as with most image processing methods. </p>
+        
+        <h3>Question 2 - Comparison with Gaussian Smoothing</h3>
+        <p>For the image of the woman, the first option is able to remove most of the noise with a K of 30, although some of the detail is lost. For the second image, a lot of noise is removed with K=20, and even more with K=30. For K values of 20 and 30, it looks like too much detail is lost by removing noise, and for 30, there is even some significant blurring happening. K=10 is a good reduction in noise without significantly losing information about the CT scan.</p>
+        <p>In the bottom two rows, using option 2 for the diffusion coefficient, the output images are significantly different. They become much darker than option 1 images, almost as if surrounding pixels are being combined to form a darker pixel. In the image of the woman, this makes it look like the lightinig is changing, and there are just more shadows around her face, but in the CT scan, there is not as much darkening. There is still a significant amount of blurring, like with option 1, on the CT scan, and a K of 10 is probably too much blurring in this case. </p>
+        <div class="images-row full-width-image-row">
+            <figure>
+                <img src="project-1-images/anisotropic_vs_gaussian.png" alt="anisotropic diffusion vs gaussian comparison">
+                <figcaption>Comparison of gaussian smoothening (second column) to anisotropic diffusion (third column: diffusion coefficient with exponential; fourth column: diffusion coefficient with fraction). . </figcaption>
+            </figure>
+        </div>
+        <p>Overall, the anisotropic diffusion filter is able to remove noise very well, but if the filter is too strong (K value in diffusion coefficient calculation), there can be a lot of blurring, making the image worse. Tuning this parameter for the specific task is necessary, as with most image processing methods. </p>
     </div>
     </div>
 </body>
