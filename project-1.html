@@ -123,6 +123,7 @@
                 <figcaption>Original image (1), histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
+        <p></p>
         <p>In the second picture, the image does not have dark or light pixels, meaning the histogram needs to be stretched in both directions</p>
         <div class="images-row">
             <figure>
@@ -130,6 +131,7 @@
                 <figcaption>Original image (2), histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
+        <p></p>
         <p>In the last image, pixels are all too dark, so the histogram needs to be stretched to include pixels with higher values.</p>
         <div class="images-row">
             <figure>
@@ -137,7 +139,8 @@
                 <figcaption>Original image (3), histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
-    
+        <p></p>
+        <p></p>
         <h3>Question (b) - Creative Task: Apply to Your Own Images</h3>
         <p>The winter picture shown below does not have enough contrast. Additionally, while the histogram looks like most pixels are between 100 and 200, they in fact get as low as 23 and as high as 224, meaning the histogram is very skewed on both sides. This is why equalization, shown in the second row, does not have a significant impact on the histogram and the overal contrast. To further improve the contrast, I multiplied the pixel values by 1.8 and then subtracted 160. Pixel value above 255 or below 0 were clipped at 255 and 0 respectively, and since there are very few pixels at these extreme values, it does not significantly alter the overall image. I adjusted these values until the histogram visibly looked better, and the CDF increased from pixel values of 0 to 255. In the last row, it is clear that the contrast is significantly improved, showing that equalization alone is not always successful.</p>
         <p>It is also worth noting that equalization may not always be necessary, since the winter image below may have been intended to have low contrast to have a certain tone (cloudy during the winter time), while the equalization makes the scene look a little less cloudy. This means the intended use of the picture must be taken into account before processing an image. </p>
@@ -147,7 +150,8 @@
                 <figcaption>Original image (top row), equalized image (middle row), and equalized, scaled, shifted, and clipped (bottom row).</figcaption>
             </figure>
         </div>
-    
+        <p></p>
+        <p></p>
         <h3>Question (c) - Histogram Matching</h3>
         <p>For the three images, matching each of them to the target image is similar to equalization because the target image has complete contrast. The following three figure show the histogram matching of the three images. </p>
         <div class="images-row">
@@ -156,18 +160,24 @@
                 <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
+        <p></p>
+        <p></p>
         <div class="images-row">
             <figure>
                 <img src="project-1-images/beans_2_target.png" alt="beans_2_target">
                 <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
+        <p></p>
+        <p></p>
         <div class="images-row">
             <figure>
                 <img src="project-1-images/beans_3_target.png" alt="beans_3_target">
                 <figcaption>Original image, histogram, and CDF in top row, and equalized image, histogram, and CDF in bottom row.</figcaption>
             </figure>
         </div>
+        <p></p>
+        <p></p>
     
         <h3>Question (d)</h3>
         <p>Using a Gaussian filter, [[1,2,1], [2,4,2], [1,2,1]], followed by a simple derivative filter in the x [-1,0,1] and y [[-1], [0], [1]] direction, the edges of the x and y components were obtained and used to calculate the magnitude of the edge vector. Then, the derivative of the gaussian filter in the x and y direction was applied to the images to directly detect the x and y components of the edges, which were also combined for the complete edge magnitude. The figures below show the naive (two step) and direct (single step) x, y, and magnitude images of the edges for the 3 test images. </p>
@@ -210,7 +220,9 @@
         <p>In the first image (circle inside of square), there is consistent noise which is not fully removed from the gaussian smoothing, so the final edge pictures also have some noise, but the edges are still clearly defined. This is because the image is overall clear in the separation between sections. </p>
         <p>In the second image (circuit board), the naive and direct methods both do nearly the same; however, the naive method appears to have more crisp edges. This may be because using two filters can preserve more information than using just one, since they are both approximations of gaussian filters. It is also likely that the DOG filters being a 3x3 matrix causes additional surrounding pixels to be included in the derivative calculation, causing more blurry edges, while the direct approach just uses row and column vectors for the derivatives, reducing the noise in the edge calculation. </p>
         <p>Finally, the last image, which is the same as the previous one, but with salt and pepper noise. It is known that salt and pepper noise is difficult to remove with gaussian filters, especially when they are such small filters, since a white or black pixel can significantly affect the value of the smoothed pixel and the local derivative. The naive method also appears to have extracted more crisp edges in this case as well, likely for the same reasons as described for the previous image. </p>
-        
+        <p></p>
+        <p></p>
+
         <h3>Question (e) - Image Sharpening</h3>
         <p>For the images below, each one was smoothed using an approximate Gaussian filter and then the smoothed image was subtracted from the original image to obtain the high-frequency component. This high-frequency component was added to the original image in order to sharpen the image and magnify any edges that were unclear. The different alpha values used, which is multiplied by the high-frequency components, were 1, 3, 5, and 10. Increasing the alpha value generally increases the clarity/magnitude of the edges. The first two rows, the CT scan and the moon, do not show the edges very well, so the sharpening is intended to magnify the edges. For the CT scan, there is a small improvement, but it is difficult to improve this due to the noise throughout the image. In the moon image, there is not too much noise - just low resolution. Therefore, the sharpening significantly improved the edges on the image and the craters are much more visible.</p>
         <p>The next row is an image of a wolverine taken by a tourist, but the image is blurry and is not very clear. In this case, the edges can be sharpened using this sharpening technique, and the results are very good. An alpha of about 3 or 5 looks like a much more realistic image, with much clearer edges, while the alpha of 10 seems to overdo the sharpening, adding clear edges where there likely should not be.</p>
@@ -223,6 +235,7 @@
             </figure>
         </div>
     </div>
+    <p></p>
 
     <div class="section">
         <h2>Part 3 - Anisotropic Diffusion</h2>
@@ -236,7 +249,9 @@
             </figure>
         </div>
         <p>Overall, the anisotropic diffusion filter is able to remove noise very well, but if the filter is too strong (K value in diffusion coefficient calculation), there can be a lot of blurring, making the image worse. Tuning this parameter for the specific task is necessary, as with most image processing methods. </p>
-        
+        <p></p>
+        <p></p>
+
         <h3>Question 2 - Comparison with Gaussian Smoothing</h3>
         <p>The anisotropic diffusion using the exponential diffusion coefficient is much better at preserving the lighting contrast than the gaussian filter. It also appears to preserve most of the details in the image, including the woman's hair. The amount of detail in the hair appears is almost indistinguishable from that of the original image. </p>
         <p>The gaussian smoothening seems to affect the lighting contrast similar to the anisotropic diffusion with the fractional diffusion coefficient, while not removing as much noise. The anisotropic diffusion image seems to have more clear edges, and about the same amount of detail. Reducing the K value may help with some of these problems, as shown in the previous image. </p>
@@ -249,7 +264,9 @@
             </figure>
         </div>
         <p>Overall, using the exponential diffusion coefficient equation seems to preserve contrast much better than the fraction diffusion coefficient and gaussian smoothening, and it also preserves details much better.</p>
-        
+        <p></p>
+        <p></p>
+
         <h3>Question 3 - Limitations of Anisotropic Diffusion and Potential Improvements</h3>
         <p>One limitation of the anisotropic diffusion filter is the amount of iterations required, which makes it the number of iterations more complex than a gaussian filter, not including the higher complexity in the calcultion of a single iteration compared to the gaussian filter. Additionally, the K value and iterations must both be tuned to optimize smoothening (cannot smooth too little, and definitely don't want to smooth too much). It may be possible to reduct the iterations needed to a much smaller number (perhaps even 1) if the K value is high enough. This would require only optimizing one parameter. Another possibility for improvement would be to include diagonal pixels in the local gradient calculation, which would provide a more complete calculation of the local landscape for smoothening. This, however, would require twice the computation (8 gradients instead of 4). Last, maybe it would improve the smoothening if the anisotropic diffusion and gaussian smoothening were used serially. Alternating between the two filters (difficult to say what order would be best; it is possible order would not matter because of commutative property of convolutions), may allow the resulting image to benefit from the strengths of each method, improving the overall smoothed image. </p>
     </div>
