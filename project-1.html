@@ -231,7 +231,7 @@
         </div>
         <p>Overall, using the exponential diffusion coefficient equation seems to preserve contrast much better than the fraction diffusion coefficient and gaussian smoothening, and it also preserves details much better.</p>
         
-        <h3>Question 3 - Limitations of Anisotropic Diffusion</h3>
+        <h3>Question 3 - Limitations of Anisotropic Diffusion and Potential Improvments</h3>
         <p>One limitation of the anisotropic diffusion filter is the amount of iterations required, which makes it the number of iterations more complex than a gaussian filter, not including the higher complexity in the calcultion of a single iteration compared to the gaussian filter. Additionally, the K value and iterations must both be tuned to optimize smoothening (cannot smooth too little, and definitely don't want to smooth too much). It may be possible to reduct the iterations needed to a much smaller number (perhaps even 1) if the K value is high enough. This would require only optimizeing one parameter. Another possibility for improvement would be to include diagonal pixels in the local gradient calculaiton, which would provide a more complete calculation of the local landscape for smoothening. This, however, would require twice the computation (8 gradients instead of 4). Last, maybe it would improve the smoothening if the anisotropic diffusion and gaussian smoothening were used serially. Alternating between the two filters (difficult to say what order would be best; it is possible order would not matter because of commutative property of convolutions), may allow the resulting image to benefit from the strengths of each method, improving the overall smoothened image. </p>
     </div>
     </div>
