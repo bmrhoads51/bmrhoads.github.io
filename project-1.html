@@ -221,13 +221,17 @@
         <h3>Question 2 - Comparison with Gaussian Smoothing</h3>
         <p>The anisotropic diffusion using the exponential diffusion coefficient is much better at preserving the lighting contrast than the gaussian filter. It also appears to preserve most of the details in the image, including the woman's hair. The amount of detail in the hair appears is almost indistinguishable from that of the original image. </p>
         <p>The gaussian smoothening seems to affect the lighting contrast similar to the anisotropic diffusion with the fractional diffusion coefficient, while not removing as much noise. The anisotropic diffusion image seems to have more clear edges, and about the same amount of detail. Reducing the K value may help with some of these problems, as shown in the previous image. </p>
+        <p>The results are very similar for the CT scan, however the lighting is not affected as much as the image of the woman, and the gaussian filter does not remove as much noise as either of the anisotropic diffusion filters. </p>
         <div class="images-row full-width-image-row">
             <figure>
                 <img src="project-1-images/anisotropic_vs_gaussian.png" alt="anisotropic diffusion vs gaussian comparison">
                 <figcaption>Comparison of gaussian smoothening (second column) to anisotropic diffusion with K value of 20 (third column: diffusion coefficient with exponential; fourth column: diffusion coefficient with fraction). . </figcaption>
             </figure>
         </div>
-        <p>Overall, the anisotropic diffusion filter is able to remove noise very well, but if the filter is too strong (K value in diffusion coefficient calculation), there can be a lot of blurring, making the image worse. Tuning this parameter for the specific task is necessary, as with most image processing methods. </p>
+        <p>Overall, using the exponential diffusion coefficient equation seems to preserve contrast much better than the fraction diffusion coefficient and gaussian smoothening, and it also preserves details much better.</p>
+        
+        <h3>Question 3 - Limitations of Anisotropic Diffusion</h3>
+        <p>a;dsf;lakj</p>
     </div>
     </div>
 </body>
