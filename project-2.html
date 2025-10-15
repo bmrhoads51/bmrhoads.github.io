@@ -5,51 +5,26 @@
   <title>Project 2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 20px; 
-      display: flex; 
-      justify-content: center;
-    }
-    .container {
-      max-width: 900px;
-      width: 100%;
-    }
+    body { font-family: Arial, sans-serif; margin: 20px; display: flex; justify-content: center; }
+    .container { max-width: 900px; width: 100%; }
     .section { margin-bottom: 40px; }
 
-    /* Reuse your side-by-side rows */
     .images-row {
-      display: flex;
-      gap: 20px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      align-items: flex-start;
+      display: flex; gap: 20px; margin-top: 10px; margin-bottom: 10px; align-items: flex-start;
     }
     .images-row.center { justify-content: center; }
     .images-row figure {
-      flex: 1;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex: 1; margin: 0; display: flex; flex-direction: column; align-items: center;
     }
     .images-row figure img {
-      width: 70%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
+      width: 70%; height: auto; border-radius: 6px; display: block;
     }
     .images-row figcaption {
-      width: 70%;
-      text-align: center;
-      font-size: 0.95em;
-      color: #555;
-      margin-top: 5px;
+      width: 70%; text-align: center; font-size: 0.95em; color: #555; margin-top: 5px;
     }
     .images-row .less-width { flex: 0.5; }
     .images-row .more-width { flex: 1.5; }
 
-    /* Edge-to-edge (kept from Project 1) */
     .images-row.full-width-image-row { gap: 0; margin: 0; }
     .images-row.full-width-image-row figure { margin: 0; padding: 0; width: 0; display: flex; flex-direction: column; align-items: stretch; }
     .images-row.full-width-image-row figure img { width: 100%; height: auto; border-radius: 0; display: block; }
@@ -57,45 +32,19 @@
     .images-row.full-width-image-row figure.less-width { flex: 0.5 1 0%; margin: 0; width: 0; }
     .images-row.full-width-image-row figure.more-width { flex: 1.5 1 0%; margin: 0; width: 0; }
 
-    /* 3x3 grid helper for Part 2 collages */
     .grid-3x3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 10px 0;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 10px 0;
     }
-    .grid-3x3 figure {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .grid-3x3 figure img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
-    }
-    .grid-3x3 figcaption {
-      width: 100%;
-      text-align: center;
-      font-size: 0.95em;
-      color: #555;
-      margin-top: 5px;
-    }
+    .grid-3x3 figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+    .grid-3x3 figure img { width: 100%; height: auto; border-radius: 6px; display: block; }
+    .grid-3x3 figcaption { width: 100%; text-align: center; font-size: 0.95em; color: #555; margin-top: 5px; }
     .grid-3x3 .center-tile {
-      border: 2px dashed #bbb;
-      color: #666;
-      font-size: 0.95em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 6px;
-      min-height: 80px;
-      padding: 16px;
-      text-align: center;
+      border: 2px dashed #bbb; color: #666; font-size: 0.95em;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 6px; min-height: 80px; padding: 16px; text-align: center;
     }
 
+    .placeholder { color: #666; font-style: italic; }
     h1, h2, h3 { margin-top: 0; }
   </style>
 </head>
@@ -128,10 +77,10 @@
         </figure>
       </div>
 
-      <p><!-- TODO: Discussion: point selection, DLT homography H, inverse mapping & rectification setup. --></p>
+      <p class="placeholder">[Describe how you selected 4+ correspondences, computed H (DLT/RANSAC), and chose the target rectangle.]</p>
 
-      <!-- Two rectified images side-by-side -->
-      <h3>Rectified Results</h3>
+      <!-- Three across: two rectified + bird’s-eye -->
+      <h3>Rectified Results &amp; Bird’s-Eye Reference</h3>
       <div class="images-row">
         <figure>
           <img src="project-2-images/PUT_RECTIFIED_RESULT_A.jpg" alt="Rectified image result A (fronto-parallel)" />
@@ -141,9 +90,13 @@
           <img src="project-2-images/PUT_RECTIFIED_RESULT_B.jpg" alt="Rectified image result B (fronto-parallel)" />
           <figcaption>Rectified view (B).</figcaption>
         </figure>
+        <figure>
+          <img src="project-2-images/PUT_BIRDSEYE_REFERENCE.jpg" alt="Bird’s-eye reference image for comparison with rectified views" />
+          <figcaption>Bird’s-eye reference.</figcaption>
+        </figure>
       </div>
 
-      <p><!-- TODO: Discussion: observations, accuracy, distortions, and notes on target rectangle choices. --></p>
+      <p class="placeholder">[Compare rectified views to the bird’s-eye image: scale, axis alignment, and any residual distortion.]</p>
     </div>
 
     <div style="height: 40px;"></div>
@@ -154,97 +107,97 @@
     <div class="section">
       <h2>Part 2 - Creative Application (Exploration &amp; Extension)</h2>
 
-      <p><!-- TODO: Describe the project idea and capture setup for the field images. --></p>
+      <p class="placeholder">[Briefly introduce your creative application (surround-view / panorama / AR) and the capture setup.]</p>
 
-      <!-- 3x3 grid: outer eight field photos, center blank/title -->
+      <!-- 3x3 grid: outer eight field photos (pre-cropped files), center blank/title -->
       <h3>Field Images (Overview)</h3>
       <div class="grid-3x3">
         <!-- Row 1 -->
         <figure>
-          <img src="project-2-images/field_northwest.jpg" alt="Field view - Northwest (raw)" />
-          <figcaption>Northwest (raw)</figcaption>
+          <img src="project-2-images/field_northwest_cropped.jpg" alt="Field view - Northwest (raw, cropped)" />
+          <figcaption>Northwest (raw, cropped)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_north.jpg" alt="Field view - North (raw)" />
-          <figcaption>North (raw)</figcaption>
+          <img src="project-2-images/field_north_cropped.jpg" alt="Field view - North (raw, cropped)" />
+          <figcaption>North (raw, cropped)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_northeast.jpg" alt="Field view - Northeast (raw)" />
-          <figcaption>Northeast (raw)</figcaption>
+          <img src="project-2-images/field_northeast_cropped.jpg" alt="Field view - Northeast (raw, cropped)" />
+          <figcaption>Northeast (raw, cropped)</figcaption>
         </figure>
 
         <!-- Row 2 -->
         <figure>
-          <img src="project-2-images/field_west.jpg" alt="Field view - West (raw)" />
-          <figcaption>West (raw)</figcaption>
+          <img src="project-2-images/field_west_cropped.jpg" alt="Field view - West (raw, cropped)" />
+          <figcaption>West (raw, cropped)</figcaption>
         </figure>
         <div class="center-tile">Field overview / title</div>
         <figure>
-          <img src="project-2-images/field_east.jpg" alt="Field view - East (raw)" />
-          <figcaption>East (raw)</figcaption>
+          <img src="project-2-images/field_east_cropped.jpg" alt="Field view - East (raw, cropped)" />
+          <figcaption>East (raw, cropped)</figcaption>
         </figure>
 
         <!-- Row 3 -->
         <figure>
-          <img src="project-2-images/field_southwest.jpg" alt="Field view - Southwest (raw)" />
-          <figcaption>Southwest (raw)</figcaption>
+          <img src="project-2-images/field_southwest_cropped.jpg" alt="Field view - Southwest (raw, cropped)" />
+          <figcaption>Southwest (raw, cropped)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_south.jpg" alt="Field view - South (raw)" />
-          <figcaption>South (raw)</figcaption>
+          <img src="project-2-images/field_south_cropped.jpg" alt="Field view - South (raw, cropped)" />
+          <figcaption>South (raw, cropped)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_southeast.jpg" alt="Field view - Southeast (raw)" />
-          <figcaption>Southeast (raw)</figcaption>
+          <img src="project-2-images/field_southeast_cropped.jpg" alt="Field view - Southeast (raw, cropped)" />
+          <figcaption>Southeast (raw, cropped)</figcaption>
         </figure>
       </div>
 
-      <p><!-- TODO: Discussion: capture consistency, lens, exposure, alignment notes. --></p>
+      <p class="placeholder">[Note image consistency (height/orientation), lens settings, and planned overlap for stitching.]</p>
 
-      <!-- 3x3 grid: same photos with correspondences -->
+      <!-- 3x3 grid: same photos with correspondences (pre-cropped *_pts files) -->
       <h3>Field Images with Correspondences</h3>
       <div class="grid-3x3">
         <!-- Row 1 -->
         <figure>
-          <img src="project-2-images/field_northwest_pts.jpg" alt="Northwest with correspondences" />
+          <img src="project-2-images/field_northwest_pts_cropped.jpg" alt="Northwest with correspondences (cropped)" />
           <figcaption>Northwest (with correspondences)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_north_pts.jpg" alt="North with correspondences" />
+          <img src="project-2-images/field_north_pts_cropped.jpg" alt="North with correspondences (cropped)" />
           <figcaption>North (with correspondences)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_northeast_pts.jpg" alt="Northeast with correspondences" />
+          <img src="project-2-images/field_northeast_pts_cropped.jpg" alt="Northeast with correspondences (cropped)" />
           <figcaption>Northeast (with correspondences)</figcaption>
         </figure>
 
         <!-- Row 2 -->
         <figure>
-          <img src="project-2-images/field_west_pts.jpg" alt="West with correspondences" />
+          <img src="project-2-images/field_west_pts_cropped.jpg" alt="West with correspondences (cropped)" />
           <figcaption>West (with correspondences)</figcaption>
         </figure>
         <div class="center-tile">Control points overview</div>
         <figure>
-          <img src="project-2-images/field_east_pts.jpg" alt="East with correspondences" />
+          <img src="project-2-images/field_east_pts_cropped.jpg" alt="East with correspondences (cropped)" />
           <figcaption>East (with correspondences)</figcaption>
         </figure>
 
         <!-- Row 3 -->
         <figure>
-          <img src="project-2-images/field_southwest_pts.jpg" alt="Southwest with correspondences" />
+          <img src="project-2-images/field_southwest_pts_cropped.jpg" alt="Southwest with correspondences (cropped)" />
           <figcaption>Southwest (with correspondences)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_south_pts.jpg" alt="South with correspondences" />
+          <img src="project-2-images/field_south_pts_cropped.jpg" alt="South with correspondences (cropped)" />
           <figcaption>South (with correspondences)</figcaption>
         </figure>
         <figure>
-          <img src="project-2-images/field_southeast_pts.jpg" alt="Southeast with correspondences" />
+          <img src="project-2-images/field_southeast_pts_cropped.jpg" alt="Southeast with correspondences (cropped)" />
           <figcaption>Southeast (with correspondences)</figcaption>
         </figure>
       </div>
 
-      <p><!-- TODO: Discussion: tie-point strategy and consistency between views. --></p>
+      <p class="placeholder">[Explain your tie-point strategy and the target geometry you used for each homography.]</p>
 
       <!-- Rectified per direction: 3 / 2 / 3 rows -->
       <h3>Rectified Views</h3>
@@ -292,7 +245,7 @@
         </figure>
       </div>
 
-      <p><!-- TODO: Discussion: rectification consistency across views, residual perspective, blending concerns. --></p>
+      <p class="placeholder">[Discuss consistency across rectified views, residual skew, and blending considerations.]</p>
 
       <!-- Final stitched image -->
       <h3>Final Stitched Composite</h3>
@@ -303,7 +256,7 @@
         </figure>
       </div>
 
-      <p><!-- TODO: Discussion: stitching/blending approach, seams, exposure/white balance, and limitations. --></p>
+      <p class="placeholder">[Describe your stitching/blending (feathering/multiband/seam finding) and any limitations.]</p>
     </div>
 
     <div style="height: 40px;"></div>
@@ -314,32 +267,29 @@
     <div class="section">
       <h2>Part 3 - Warping Comparison (Triangular Mesh vs TPS)</h2>
 
-      <!-- (1) Correspondence selections (single file with side-by-side) -->
       <div class="images-row">
         <figure class="more-width">
           <img src="project-2-images/dart_kiffin_correspondences.jpg" alt="Dart and Kiffin images side by side with selected correspondences" />
           <figcaption>Dart &amp; Kiffin — selected correspondences (side-by-side in one image file).</figcaption>
         </figure>
       </div>
-      <p><!-- TODO: Discussion: control point strategy, average/template landmarks, and any preprocessing. --></p>
+      <p class="placeholder">[Comment on control-point placement, averaging strategy, and any preprocessing (alignment/scaling).]</p>
 
-      <!-- (2) Triangle mesh from averaged correspondences -->
       <div class="images-row">
         <figure class="more-width">
           <img src="project-2-images/dart_kiffin_triangle_mesh.jpg" alt="Dart and Kiffin with triangle mesh from averaged correspondences" />
           <figcaption>Triangle mesh using averaged correspondences (side-by-side in one image file).</figcaption>
         </figure>
       </div>
-      <p><!-- TODO: Discussion: piecewise affine behavior, continuity at triangle edges, pros/cons. --></p>
+      <p class="placeholder">[Discuss piecewise-affine behavior: continuity at triangle edges vs smoothness, and relative runtime.]</p>
 
-      <!-- (3) Side-by-side comparison of averaged warped images: Triangular Mesh vs TPS -->
       <div class="images-row">
         <figure class="more-width">
           <img src="project-2-images/dart_kiffin_mesh_vs_tps_avg.jpg" alt="Side-by-side average of the two warped images: Triangular mesh (left) vs TPS (right)" />
           <figcaption>Average of warped images — Triangular Mesh (left) vs TPS (right).</figcaption>
         </figure>
       </div>
-      <p><!-- TODO: Discussion: visual differences, smoothness, runtime, artifacts, and your conclusions. --></p>
+      <p class="placeholder">[Compare the two results qualitatively (smoothness, bending artifacts) and conclude which fits your use case best.]</p>
     </div>
 
     <div style="height: 40px;"></div>
