@@ -62,22 +62,27 @@
       <h2>Part 1 - Image Homography Estimation</h2>
 
       <!-- Single: Original -->
+      
+      <p>The first task was to rectify an image of a planar surface taken from an angle. For this part, I took a picture of two sticky notes with phrases written on them. From an angle, they are difficult to read, as shown below: </p>
+
       <div class="images-row">
         <figure class="more-width">
           <img src="project-2-images/part1_angled_picture.jpg" alt="Original photo of a planar surface captured at an angle" />
-          <figcaption>Original input image.</figcaption>
+          <figcaption>Angled picture of sticky notes. </figcaption>
         </figure>
       </div>
 
+      <p>The image below shows the points chosen as the four correspondence points for each sticky note. The points were obtained by estimating the locations of each point, plotting the point on the image, and then adjusting the location until the points were on the corners of the sticky notes, which correspond to the corners of the square matrix the images will be warped to. </p>
+      
       <!-- Single: Correspondence overlay below -->
       <div class="images-row">
         <figure class="more-width">
-          <img src="project-2-images/sticky_note_correspondences.jpg" alt="Original image with selected correspondences labeled" />
+          <img src="project-2-images/sticky_note_correspondences.png" alt="Original image with selected correspondences labeled" />
           <figcaption>Selected correspondences overlaid on the original image.</figcaption>
         </figure>
       </div>
 
-      <p class="placeholder">[Describe how you selected 4+ correspondences, computed H (DLT/RANSAC), and chose the target rectangle.]</p>
+      <p>The rectified images of the two sticky notes are shown below, which clearly show the phrases written on the sticky notes. To see the accuracy of the rectified images, a bird's eye view image is shown which clearly shows the phrases on the sticky notes without any warping. There is slight deformation in the edges of the sticky notes of rectified image B, which is caused by the slight curvature in the sticky note. The process used here is a linear matrix transformation, so it cannot account for curvature in the sticky note. </p>
 
       <!-- Three across: two rectified + bird’s-eye -->
       <h3>Rectified Results &amp; Bird’s-Eye Reference</h3>
