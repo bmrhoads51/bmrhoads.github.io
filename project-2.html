@@ -136,7 +136,7 @@
           <img src="project-2-images/west.jpg" alt="Field view - West (raw, cropped)" />
           <figcaption>West</figcaption>
         </figure>
-        <div style="display:flex; align-items:center; justify-content:center; font-size:0.95em; color:#555;">
+        <div style="display:flex; align-items:center; justify-content:center; font-size:0.95em; color:#555; padding: 0 40px;">
             Screenshots taken from center of field in Google Streetview
         </div>
         <figure>
@@ -159,54 +159,54 @@
         </figure>
       </div>
 
-      <p class="placeholder">[Note image consistency (height/orientation), lens settings, and planned overlap for stitching.]</p>
+      <p>For every screenshot, I chose 4 correspondence points to rectify. Specific sections of the field were chosen for the 8 different pictures so that they could combine to make the full field, with the exception of the very center of the field, since that is where the pictures are taken from. The correspondence points on each image are shown below. </p>
 
       <!-- 3x3 grid: same photos with correspondences (pre-cropped *_pts files) -->
-      <h3>Field Images with Correspondences</h3>
+      <h3>Field Images with Correspondence Points</h3>
       <div class="grid-3x3">
         <!-- Row 1 -->
         <figure>
           <img src="project-2-images/north_west_pts.png" alt="Northwest with correspondences (cropped)" />
-          <figcaption>Northwest (with correspondences)</figcaption>
+          <figcaption>Northwest</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/north_pts.png" alt="North with correspondences (cropped)" />
-          <figcaption>North (with correspondences)</figcaption>
+          <figcaption>North</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/north_east_pts.png" alt="Northeast with correspondences (cropped)" />
-          <figcaption>Northeast (with correspondences)</figcaption>
+          <figcaption>Northeast</figcaption>
         </figure>
 
         <!-- Row 2 -->
         <figure>
           <img src="project-2-images/west_pts.png" alt="West with correspondences (cropped)" />
-          <figcaption>West (with correspondences)</figcaption>
+          <figcaption>West</figcaption>
         </figure>
-        <div style="display:flex; align-items:center; justify-content:center; font-size:0.95em; color:#555;">
-            Control points overview/ title
+        <div style="display:flex; align-items:center; justify-content:center; font-size:0.95em; color:#555; padding: 0 40px;">
+            Correspondence points on field images
         </div>
         <figure>
           <img src="project-2-images/east_pts.png" alt="East with correspondences (cropped)" />
-          <figcaption>East (with correspondences)</figcaption>
+          <figcaption>East</figcaption>
         </figure>
 
         <!-- Row 3 -->
         <figure>
           <img src="project-2-images/south_west_pts.png" alt="Southwest with correspondences (cropped)" />
-          <figcaption>Southwest (with correspondences)</figcaption>
+          <figcaption>Southwest</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/south_pts.png" alt="South with correspondences (cropped)" />
-          <figcaption>South (with correspondences)</figcaption>
+          <figcaption>South</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/south_east_pts.png" alt="Southeast with correspondences (cropped)" />
-          <figcaption>Southeast (with correspondences)</figcaption>
+          <figcaption>Southeast</figcaption>
         </figure>
       </div>
 
-      <p class="placeholder">[Explain your tie-point strategy and the target geometry you used for each homography.]</p>
+      <p>Next, using the correspondence points, each image is rectified to the general dimensions they are expected to be in the final image. </p>
 
       <!-- Rectified per direction: 3 / 2 / 3 rows -->
       <h3>Rectified Views</h3>
@@ -214,15 +214,15 @@
       <div class="images-row">
         <figure>
           <img src="project-2-images/north_west_rect.png" alt="Rectified Northwest" />
-          <figcaption>Rectified Northwest</figcaption>
+          <figcaption>Northwest</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/north_rect.png" alt="Rectified North" />
-          <figcaption>Rectified North</figcaption>
+          <figcaption>North</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/north_east_rect.png" alt="Rectified Northeast" />
-          <figcaption>Rectified Northeast</figcaption>
+          <figcaption>Northeast</figcaption>
         </figure>
       </div>
 
@@ -230,14 +230,14 @@
       <div class="images-row center">
         <figure class="less-width">
           <img src="project-2-images/west_rect.png" alt="Rectified West" />
-          <figcaption>Rectified West</figcaption>
+          <figcaption>West</figcaption>
         </figure>
         <figure class="less-width">
           <img src="project-2-images/blank.png" alt="blank space" />
         </figure>
         <figure class="less-width">
           <img src="project-2-images/east_rect.png" alt="Rectified East" />
-          <figcaption>Rectified East</figcaption>
+          <figcaption>East</figcaption>
         </figure>
       </div>
 
@@ -245,22 +245,22 @@
       <div class="images-row">
         <figure>
           <img src="project-2-images/south_west_rect.png" alt="Rectified Southwest" />
-          <figcaption>Rectified Southwest</figcaption>
+          <figcaption>Southwest</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/south_rect.png" alt="Rectified South" />
-          <figcaption>Rectified South</figcaption>
+          <figcaption>South</figcaption>
         </figure>
         <figure>
           <img src="project-2-images/south_east_rect.png" alt="Rectified Southeast" />
-          <figcaption>Rectified Southeast</figcaption>
+          <figcaption>Southeast</figcaption>
         </figure>
       </div>
 
-      <p class="placeholder">[Discuss consistency across rectified views, residual skew, and blending considerations.]</p>
+      <p>Next, the 8 images are placed on a large matrix in their expected position. There is slight overlap in some of the rectified images, so for the pixels where there is overlap, the pixel values are averaged together. The final stitched image is shown below. </p>
 
       <!-- Final stitched image -->
-      <h3>Final Stitched Composite</h3>
+      <h3>Final Stitched Image of Football Field</h3>
       <div class="images-row full-width-image-row">
         <figure class="more-width">
           <img src="project-2-images/stitched_field.png" alt="Final stitched top-down composite of the field" />
@@ -268,7 +268,7 @@
         </figure>
       </div>
 
-      <p class="placeholder">[Describe your stitching/blending (feathering/multiband/seam finding) and any limitations.]</p>
+      <p>The stitching was clearly not perfect, since it was very difficult to accurately rectify parts of the field, especially the distant parts. Also, the images are taken from pretty low, so the angle is very small, meaning the field is very flattened. The north and south photos rectified the best since these were the closest regions to the center of the field, and the middle of the field is left blank. Also, to improve the final image, I could have taken pictures from different point of views along the field to get better resolution and thus obtain a better result. </p>
     </div>
 
     <div style="height: 40px;"></div>
