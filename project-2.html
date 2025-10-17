@@ -101,7 +101,6 @@
         </figure>
       </div>
 
-      <p>As shown above, the use of inverse homography, where the homography matrix was found to transform the angled image to a regular matrix. </p>
     </div>
 
     <div style="height: 40px;"></div>
@@ -159,7 +158,7 @@
         </figure>
       </div>
 
-      <p>For every screenshot, I chose 4 correspondence points to rectify. Specific sections of the field were chosen for the 8 different pictures so that they could combine to make the full field, with the exception of the very center of the field, since that is where the pictures are taken from. The correspondence points on each image are shown below. </p>
+      <p>For every screenshot, I chose 4 correspondence points to rectify. Specific sections of the field were chosen for the 8 different pictures so that they could combine to make the full field, with the exception of the very center of the field, since that is where the pictures are taken from. Padding was added on the sides of the image so I could place some correspondence points oustide of the image. This was required when the section of the field I wanted to capture extended beyond part of the frame. Had I not done this, I would not have been able to keep as much of the screenshot, thus increasing the size of the portion of the field left blank. Also, note that the corner images capture very distance portions of the field and therefore take up a very small part of the frames. This will cause a lot more blurriness when warping these images, and could only be improved by moving the location when taking the screenshot or taking the photo from a higher angle. The correspondence points on each image are shown below. </p>
 
       <!-- 3x3 grid: same photos with correspondences (pre-cropped *_pts files) -->
       <h3>Field Images with Correspondence Points</h3>
@@ -279,21 +278,21 @@
     <div class="section">
       <h2>Part 3 - Warping Comparison (Triangular Mesh vs Thin-Plate Spline)</h2>
 
-      <p>For the triangular mesh warping, I used images of Jaxson Dart and Lane Kiffin to combine them into a single person. The first step was choose correspodence points for both images, which included inner and outer eyes, upper and lower ears, mouth, nose, and chin.</p>
+      <p>For the triangular mesh warping, I used images of Jaxson Dart (https://www.nfl.com/prospects/jaxson-dart/32004441-5273-5504-d6f2-f2d3f25131e8) and Lane Kiffin (https://olemisssports.com/staff-directory/lane-kiffin/634) to combine them into a single person. The first step was to choose correspodence points for both images, which included inner and outer eyes, upper and lower ears, mouth, nose, and chin.</p>
 
       <div class="images-row">
         <figure class="more-width">
           <img src="project-2-images/correspondence_pts.png" alt="Dart and Kiffin images side by side with selected correspondences" />
         </figure>
       </div>
-      <p>Next, the average locations of each correspondence points over the two images was obtained, and from these points a triangular mesh was created, which is shown on each of the pictures below. </p>
+      <p>Next, the average locations of each correspondence points over the two images were obtained, and from these points a triangular mesh was created, which is shown on each of the pictures below. </p>
 
       <div class="images-row">
         <figure class="more-width">
           <img src="project-2-images/triangular_meshes.png" alt="Dart and Kiffin with triangle mesh from averaged correspondences" />
         </figure>
       </div>
-      <p>Using the triangular mesh warping, which is considered a piecewise linear transformation, and the thin-plate spline warping method, which is considered more smooth, the two original images were morphed to the average triangular mesh, and then the two images were averaged together. The results are shown below for a mixture of Jaxson Dart and Lane Kiffin. </p>
+      <p>Using the triangular mesh linear warping and the thin-plate spline warping method, which is expected to be more smooth, the two original images were morphed to the average triangular mesh, and then the two images were averaged together. The results using each method are shown below for a combination of Jaxson Dart and Lane Kiffin. </p>
 
       <div class="images-row">
         <figure class="more-width">
@@ -301,7 +300,7 @@
           <figcaption>Combined images — Triangular Mesh (left) vs TPS (right).</figcaption>
         </figure>
       </div>
-      <p>For this example, it is difficult to see any difference between the two methods. However, both methods did a very good job combining the facial features of the two faces. The final face is pretty smooth and is a clear combination of Jaxson Dart and Lane Kiffin. However, the features around the face, like the ears, hair, and neck, are not very crisp. This is because there were not many correspondence points outside of the face, so the triangular mesh warping does not work as well on these parts of the image. Adding additional correspondence points to the neck, hair, and forehead would help the image overall. </p>
+      <p>For this example, it is difficult to see any difference between the two methods. However, both methods did a very good job combining the facial features of the two faces. The final face is pretty smooth and is a clear combination of Jaxson Dart and Lane Kiffin. However, the features around the face, like the ears, hair, and neck, are not very clean This is because there were not many correspondence points outside of the face, so the triangular mesh warping does not work as well on these parts of the image. Adding additional correspondence points to the neck, hair, and forehead would help improve the bad parts of the image. </p>
     </div>
 
     <div style="height: 40px;"></div>
